@@ -4,7 +4,7 @@ export const ActualContent = styled.div`
   z-index: 1;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-flow: column;
 `;
