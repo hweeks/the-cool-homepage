@@ -49,6 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'hweeks - DevOperator',
       template: './server/index-template.html',
+      favicon: './src/static/favicon.ico',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
