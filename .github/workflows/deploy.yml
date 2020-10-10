@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: get latest main, build it, use it
+      if: github.event.pull_request.merged == true
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}

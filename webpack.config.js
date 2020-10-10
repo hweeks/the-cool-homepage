@@ -52,4 +52,17 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: 'vendor',
+          chunks: 'all',
+          test: /node_modules/,
+          priority: 20,
+        },
+      },
+    },
+  },
 };
