@@ -10,7 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using ssh key
+    - name: get latest main, build it, use it
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
@@ -18,4 +18,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          ls
+          cd the-cool-homepage
+          git checkout main
+          git pull origin main
+          docker-compose stop hweeks
+          docker-compose up -d --build hweeks
