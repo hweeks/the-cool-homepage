@@ -1,0 +1,26 @@
+name: deploy main
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: get latest main, build it, use it
+      if: github.event.pull_request.merged == true
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd the-cool-homepage
+          git checkout main
+          git pull origin main
+          docker-compose stop hweeks
+          docker-compose up -d --build hweeks

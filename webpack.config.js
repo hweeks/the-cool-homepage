@@ -49,7 +49,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'hweeks - DevOperator',
       template: './server/index-template.html',
+      favicon: './src/static/favicon.ico',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: 'vendor',
+          chunks: 'all',
+          test: /node_modules/,
+          priority: 20,
+        },
+      },
+    },
+  },
 };
