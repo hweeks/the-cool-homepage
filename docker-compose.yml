@@ -7,6 +7,11 @@ services:
     ports:
       - "3000:3000"
     labels:
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      # global redirect to https
+      - "traefik.http.routers.redirs.rule=hostregexp(`{host:.+}`)"
+      - "traefik.http.routers.redirs.entrypoints=web"
+      - "traefik.http.routers.redirs.middlewares=redirect-to-https"
       - "traefik.enable=true"
       - "traefik.http.routers.hweeksbeta.rule=Host(`hweeks.com`)"
       - "traefik.http.routers.hweeksbeta.entrypoints=websecure"
@@ -19,11 +24,6 @@ services:
       - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      # global redirect to https
-      - "traefik.http.routers.redirs.rule=hostregexp(`{host:.+}`)"
-      - "traefik.http.routers.redirs.entrypoints=web"
-      - "traefik.http.routers.redirs.middlewares=redirect-to-https"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.myresolver.acme.httpchallenge=true"
