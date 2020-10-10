@@ -12,7 +12,7 @@ USER root
 
 ADD . /app/hweeks
 
-RUN cd /app/hweeks && rm -rf node_modules/ && yarn install --production=false &&\
+RUN cd /app/hweeks && yarn install --production=false &&\
     NODE_ENV=production yarn build &&\
     rm -rf node_modules/ && yarn install --production &&\
     addgroup -g $GID -S $GROUP &&\
