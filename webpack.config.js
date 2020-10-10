@@ -37,6 +37,7 @@ module.exports = {
   },
   devServer: {
     port: 3000,
+    host: '0.0.0.0',
     contentBase: `${__dirname}/static`,
     publicPath: '/',
     filename: '[name].bundle.js',

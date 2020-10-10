@@ -5,6 +5,7 @@ export const BottomFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.8rem;
 `;
 
 export const TextFoot = styled.p`

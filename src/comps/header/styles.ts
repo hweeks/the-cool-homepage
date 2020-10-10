@@ -5,6 +5,7 @@ export const TopHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.8rem;
 `;
 
 export const MyName = styled.h1`

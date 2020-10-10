@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import { HomeVideo } from './styles';
 
-const handleVisibilityChange = (videoElement: HTMLVideoElement) => {
+const handleVisibilityChange = (videoElement: React.MutableRefObject<HTMLVideoElement>) => {
   if (document.hidden) {
-    videoElement.pause();
+    videoElement.current.pause();
   } else {
-    videoElement.play();
+    videoElement.current.play();
   }
 };
 
 export const Video = ({ url } : { url:string }) => {
-  const videoElement = useRef(null);
+  const videoElement = useRef<HTMLVideoElement>(null);
   const boundVisCallback = handleVisibilityChange.bind(null, videoElement);
   useEffect(() => {
     document.addEventListener('visibilitychange', boundVisCallback, false);

@@ -10,7 +10,7 @@ export const Content = () => (
   <ActualContent>
     <Header />
     <MainText>
-      <DimensionalText text="i like bike" />
+      <DimensionalText text="i like bikes" />
     </MainText>
     <Footer />
   </ActualContent>
