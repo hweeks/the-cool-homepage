@@ -23,7 +23,7 @@ prereq:
 
   * an a record for hweeks.com pointing to the server the thing is on, because letsencrypt is relying on http challenge
 
-or u know, u coudl update the label in docker-compose::service::hweeks from hweeks.com to whatever, just make sure to do the above bs.
+or u know, u could update the label in docker-compose::service::hweeks from hweeks.com to whatever, just make sure to do the above bs.
 
 ## epilogue
 
