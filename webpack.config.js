@@ -1,15 +1,15 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const webpack = require('webpack')
+const webpack = require('webpack');
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: {
-    main: "./src/index.tsx"
+    main: './src/index.tsx',
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
   output: {
     path: `${__dirname}/server/build`,
@@ -20,9 +20,9 @@ module.exports = {
       {
         test: /\.js?$/,
         include: [
-          `${__dirname}/src`
+          `${__dirname}/src`,
         ],
-        loader: "babel-loader",
+        loader: 'babel-loader',
       },
       {
         test: /\.t(s|sx)?$/,
@@ -31,25 +31,25 @@ module.exports = {
       },
       {
         test: /\.(mp4|pdf)/i,
-        loader: 'file-loader'
+        loader: 'file-loader',
       },
-    ]
+    ],
   },
   devServer: {
     port: 3000,
     contentBase: `${__dirname}/static`,
-    publicPath: "/",
+    publicPath: '/',
     filename: '[name].bundle.js',
     watchOptions: {
       aggregateTimeout: 300,
-      poll: 1000
-    }
+      poll: 1000,
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'hweeks - DevOperator',
-      template: './server/index-template.html'
+      template: './server/index-template.html',
     }),
-    new webpack.HotModuleReplacementPlugin()
-  ]
-}
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+};
