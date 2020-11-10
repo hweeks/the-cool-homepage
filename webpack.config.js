@@ -48,7 +48,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'hweeks - DevOperator',
+      title: 'hweeks - all kinds of js',
       template: './server/index-template.html',
       favicon: './src/static/favicon.ico',
     }),
