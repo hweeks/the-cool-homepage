@@ -9,6 +9,7 @@ export const BottomFooter = styled.footer`
 `;
 
 export const TextFoot = styled.p`
+  text-align: center;
   font-size: 3rem;
   -webkit-text-fill-color: #f98ca4;
   -webkit-text-stroke-width: 1px;
