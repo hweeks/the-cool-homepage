@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TextFoot, BottomFooter, LinkFoot } from './styles';
-import pdfLonk from '../../static/the-stuff-i-do-for-money.pdf';
+import pdfLonk from '../../static/what-i-do-for-money.pdf';
 
 export const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -18,8 +18,8 @@ export const Footer = () => {
     };
     if (isProbablyIOsAndItsBar) {
       window.addEventListener('scroll', handleScrollBsForiOs);
-      handleScrollBsForiOs();
     }
+    handleScrollBsForiOs();
     return function cleanup() {
       if (isProbablyIOsAndItsBar) {
         window.removeEventListener('scroll', handleScrollBsForiOs);
