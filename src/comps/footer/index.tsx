@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TextFoot, BottomFooter, LinkFoot } from './styles';
-import pdfLonk from '../../static/what-i-do-for-money.pdf';
+import { ResumeHolster } from '../resume';
 
 export const Footer = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -31,7 +31,7 @@ export const Footer = () => {
       <TextFoot ref={footerRef}>
         <LinkFoot href="https://github.com/hweeks">code</LinkFoot>
         -
-        <LinkFoot href={pdfLonk}>resume</LinkFoot>
+        <ResumeHolster />
         -
         <LinkFoot href="mailto:jobs@hweeks.com">contact</LinkFoot>
       </TextFoot>
