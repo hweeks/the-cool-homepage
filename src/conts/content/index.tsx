@@ -12,7 +12,7 @@ export const Content = () => (
   <ActualContent>
     <Header />
     <MainText>
-      <DimensionalText text={`i like ${some_of_the_things_i_like()}`} />
+      <DimensionalText text={some_of_the_things_i_like()} />
     </MainText>
     <Footer />
   </ActualContent>
